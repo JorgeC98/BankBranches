@@ -34,24 +34,24 @@ public class Bank {
         }
         return -1;
     }
-    public boolean addCustomer(String bName, String cName, double trans){
-        int position=findBranch(bName); //Adds a customer given its data, and the
-        //Customer cust;                //name of the desired branch
+    public boolean addCustomer(String branchName, String customerName, double trans){
+        int position=findBranch(branchName); /*Adds a customer given its data, and the
+        Customer cust;                name of the desired branch*/
         if (position!=-1){
-            branches.get(position).addCustomer(cName,trans);
+            branches.get(position).addCustomer(customerName,trans);
             
             System.out.println("Customer successfuly added to the specified branch");
             return true;
         }else{
-            System.out.println(/*branch couldnt be found*/"Customer not added");
+            System.out.println("Customer not added");/*branch couldnt be found*/
             return false;
         }
     }
     
-    public boolean addTransaction(String bName, String cName, double amount){
-        int position=findBranch(bName); //Add a transaction for a given Customer
+    public boolean addTransaction(String branchName, String customerName, double amount){
+        int position=findBranch(branchName); //Add a transaction for a given Customer
         if (position!=-1){
-            branches.get(position).addTransaction(cName, amount);
+            branches.get(position).addTransaction(customerName, amount);
             System.out.println("Transaction done");
             return true;
         }else{
@@ -60,8 +60,8 @@ public class Bank {
         }
     }
     
-    public void showCustomers(String bName){ //Show the whole Customer list 
-        int position = findBranch(bName); //and their transactions
+    public void showCustomers(String branchName){ //Show the whole Customer list 
+        int position = findBranch(branchName); //and their transactions
         if (position==-1){
             System.out.println("That branch does not exist");
         }else{
