@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package bankbranches;
-    import java.util.*;
+import java.util.*;
 /**
  *
  * @author Eduardo
